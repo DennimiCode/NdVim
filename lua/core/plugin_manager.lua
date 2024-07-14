@@ -8,6 +8,20 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  -- Set default loading type to lazy.
+  defaults = { lazy = true },
+  -- Colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "onedark" } },
+  -- Automatically check for plugin updates
+  checker = { enabled = true },
+  ui = {
+    icons = {
+      ft = "",
+      lazy = "󰂠 ",
+      loaded = "",
+      not_loaded = "",
+    },
+  },
   -- Configure any other settings here. See the documentation for more details.
   -- Lualine - blazing fast and easy to configure Neovim statusline written in Lua.
   {
@@ -42,15 +56,39 @@ require("lazy").setup({
   { "williamboman/mason-lspconfig.nvim" },
   -- NeoVim LSP config - configs for the Nvim LSP client
   { "neovim/nvim-lspconfig" },
-  -- Nvim-dap -
+  -- Nvim-dap - Debug Adapter Protocol client implementation for Neovim.
   { "mfussenegger/nvim-dap" },
-  -- Mason nvim dap -
+  -- Nvim-dap-ui -
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
+  },
+  -- Mason nvim dap - mason-nvim-dap bridges mason.nvim with the nvim-dap plugin.
   {
     "jay-babu/mason-nvim-dap.nvim",
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
     },
+  },
+  -- Nvim-dap-go - an extension for nvim-dap providing configurations for launching go debugger (delve) and debugging individual tests.
+  { "leoluz/nvim-dap-go" },
+  -- Gopher.nvim - minimalistic plugin for Go development in Neovim written in Lua.
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap",
+    },
+    -- will update plugin's deps on every update
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
   },
   -- None-ls - null-ls Reloaded, maintained by the community.
   { "nvimtools/none-ls.nvim" },
@@ -147,6 +185,7 @@ require("lazy").setup({
   -- Which-key - WhichKey is a lua plugin for Neovim that displays a popup with possible key bindings of the command you started typing.
   {
     "folke/which-key.nvim",
+    dependencies = { { "echasnovski/mini.icons", version = false } },
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
@@ -218,16 +257,4 @@ require("lazy").setup({
   { "nanotee/sqls.nvim" },
   -- With pantran.nvim, you can use your favorite machine translation engines without having to leave your favorite editor.
   { "potamides/pantran.nvim" },
-  -- Colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "onedark" } },
-  -- Automatically check for plugin updates
-  checker = { enabled = true },
-  ui = {
-    icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
-    },
-  },
 })
