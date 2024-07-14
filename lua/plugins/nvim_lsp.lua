@@ -24,9 +24,16 @@ lspconfig.lua_ls.setup({ -- Lua
   },
   capabilities = capabilities,
 })
-lspconfig.csharp_ls.setup({ capabilities = capabilities })              -- C#
-lspconfig.clangd.setup({ capabilities = capabilities })                 -- C & C++
-lspconfig.gopls.setup({ capabilities = capabilities })                  -- Golang
+lspconfig.csharp_ls.setup({ capabilities = capabilities }) -- C#
+lspconfig.clangd.setup({ capabilities = capabilities })    -- C & C++
+lspconfig.gopls.setup({                                    -- Golang
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      completeUnimported = true,
+    },
+  },
+})
 lspconfig.tsserver.setup({ capabilities = capabilities })               -- JavaScript & TypeScript
 lspconfig.jdtls.setup({ capabilities = capabilities })                  -- Java
 lspconfig.gradle_ls.setup({ capabilities = capabilities })              -- Gradle
