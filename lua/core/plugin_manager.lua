@@ -17,7 +17,7 @@ require("lazy").setup({
   ui = {
     icons = {
       ft = "",
-      lazy = "󰂠 ",
+      lazy = "󰂠",
       loaded = "",
       not_loaded = "",
     },
@@ -219,7 +219,7 @@ require("lazy").setup({
     version = "*",
     event = "VeryLazy",
   },
-  -- Surround UI -  plugin which can be used as a training aid or leader-triggered replacement
+  -- Surround UI - plugin which can be used as a training aid or leader-triggered replacement
   -- for some of the key combinations when using kylechui/nvim-surround.
   {
     "roobert/surround-ui.nvim",
@@ -255,6 +255,35 @@ require("lazy").setup({
   { "onsails/lspkind.nvim" },
   -- Sqls - Neovim plugin for sqls that leverages the built-in LSP client. Loosely based on the code from sqls.vim.
   { "nanotee/sqls.nvim" },
+  -- Vim-dadbod-ui
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+      {
+        "tpope/vim-dadbod",
+        lazy = true,
+      },
+      {
+        "kristijanhusak/vim-dadbod-completion",
+        ft = { "sql", "mysql", "plsql", "oracle" },
+        lazy = true,
+      },
+    },
+    cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
+    },
+  },
   -- With pantran.nvim, you can use your favorite machine translation engines without having to leave your favorite editor.
   { "potamides/pantran.nvim" },
+  -- Auto-session - takes advantage of Neovim's existing session management capabilities to provide seamless automatic session management.
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 })
