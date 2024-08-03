@@ -30,6 +30,12 @@ map("n", "<C-j>", ":wincmd j<CR>", { silent = true })
 map("n", "<C-h>", ":wincmd h<CR>", { silent = true })
 map("n", "<C-l>", ":wincmd l<CR>", { silent = true })
 
+-- Resize panes on hjkl
+vim.keymap.set("n", "L", ":vertical resize +5<CR>")
+vim.keymap.set("n", "H", ":vertical resize -5<CR>")
+vim.keymap.set("n", "K", ":horizontal resize +2<CR>")
+vim.keymap.set("n", "J", ":horizontal resize -2<CR>")
+
 -- Buffer splits keymap.
 map("n", "|", ":vsplit<CR>", { silent = true })
 map("n", "\\", ":split<CR>", { silent = true })
@@ -43,6 +49,7 @@ map("n", "<leader>la", vim.lsp.buf.code_action, { silent = true })
 map("n", "<leader>lf", vim.lsp.buf.format, { silent = true })
 map("n", "<leader>lk", vim.lsp.buf.hover, { silent = true })
 map("n", "<leader>ld", vim.lsp.buf.definition, { silent = true })
+map("n", "<leader>li", vim.lsp.buf.implementation, { silent = true })
 map("n", "<F2>", vim.lsp.buf.rename, { silent = true })
 
 -- Debuggin
