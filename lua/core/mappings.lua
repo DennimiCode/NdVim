@@ -31,10 +31,10 @@ map("n", "<C-h>", ":wincmd h<CR>", { silent = true })
 map("n", "<C-l>", ":wincmd l<CR>", { silent = true })
 
 -- Resize panes on hjkl
-vim.keymap.set("n", "L", ":vertical resize +5<CR>")
-vim.keymap.set("n", "H", ":vertical resize -5<CR>")
-vim.keymap.set("n", "K", ":horizontal resize +2<CR>")
-vim.keymap.set("n", "J", ":horizontal resize -2<CR>")
+vim.keymap.set("n", "L", ":vertical resize +5<CR>", { silent = true })
+vim.keymap.set("n", "H", ":vertical resize -5<CR>", { silent = true })
+vim.keymap.set("n", "K", ":horizontal resize +2<CR>", { silent = true })
+vim.keymap.set("n", "J", ":horizontal resize -2<CR>", { silent = true })
 
 -- Buffer splits keymap.
 map("n", "|", ":vsplit<CR>", { silent = true })
