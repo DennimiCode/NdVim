@@ -112,14 +112,17 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "nanotee/sqls.nvim",
-      {
-        "folke/lazydev.nvim",
-        opts = {},
-      },
+      { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+      { "folke/lazydev.nvim", opts = {} },
     },
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local lsp_zero = require("lsp-zero")
+
+      lsp_zero.on_attach(function(client, bufnr)
+        lsp_zero.default_keymaps({ buffer = bufnr })
+      end)
 
       lspconfig.lua_ls.setup({ -- Lua
         settings = {
