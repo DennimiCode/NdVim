@@ -39,7 +39,7 @@ return {
           "clangd", -- C & C++
           "csharp_ls", -- C#
           "gopls", -- Golang
-          "tsserver", -- JavaScript & TypeScript
+          "ts_ls", -- JavaScript & TypeScript
           "html", -- HTML
           "cssls", -- CSS
           "somesass_ls", -- Sass
