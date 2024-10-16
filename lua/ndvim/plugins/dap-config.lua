@@ -9,12 +9,12 @@ return {
       local mason_dapconfig = require("mason-nvim-dap")
       mason_dapconfig.setup({
         ensure_installed = {
-          "delve",    -- Golang
+          "delve", -- Golang
           "codelldb", -- C & C++
-          "coreclr",  -- C# & .NET
-          "javadbg",  -- Java debugger
+          "coreclr", -- C# & .NET
+          "javadbg", -- Java debugger
           "javatest", -- Java tests
-          "kotlin",   -- Kotlin
+          "kotlin", -- Kotlin
         },
         automatic_installation = true,
       })
@@ -103,24 +103,6 @@ return {
 
       require("dap-go").setup({})
 
-      dap.adapters.coreclr = {
-        type = "executable",
-        command = "netcoredbg",
-        args = { "--interpreter=vscode" },
-      }
-
-      dap.adapters.netcoredbg = {
-        type = "executable",
-        command = "netcoredbg",
-        args = { "--interpreter=vscode" },
-      }
-
-      dap.adapters.lldb = {
-        type = "executable",
-        command = "/usr/bin/lldb-vscode",
-        name = "lldb",
-      }
-
       dap.configurations.cpp = {
         {
           name = "Launch",
@@ -145,6 +127,8 @@ return {
           end,
         },
       }
+
+      require("dap.ext.vscode").load_launchjs()
     end,
   },
 }
