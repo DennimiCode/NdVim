@@ -68,7 +68,7 @@ map("n", "<F11>", ":lua require'dap'.step_into()<CR>", { silent = true })
 map("n", "<F12>", ":lua require'dap'.step_out()<CR>", { silent = true })
 
 -- Auto-Session
-map("n", "<leader>r", ":SessionRestore<CR>", { silent = true })
+map("n", "<leader>R", ":SessionRestore<CR>", { silent = true })
 
 -- NeoTree
 map("n", "<leader>e", ":Neotree toggle float focus<CR>", { silent = true })
