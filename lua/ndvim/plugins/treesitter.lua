@@ -7,6 +7,8 @@ return {
   config = function()
     local ts_config = require("nvim-treesitter.configs")
     ts_config.setup({
+      ignore_install = {},
+      modules = {},
       ensure_installed = {
         "printf",
         "lua",
@@ -44,6 +46,9 @@ return {
         "jsonc",
         "hjson",
         "jsonnet",
+        "gitignore",
+        "vue",
+        "editorconfig",
       },
       sync_install = false,
       auto_install = true,
