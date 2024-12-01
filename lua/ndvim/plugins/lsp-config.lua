@@ -157,14 +157,14 @@ return {
           },
         },
       })
-      lspconfig.tsserver.setup({ capabilities = capabilities }) -- JavaScript & TypeScript
+      lspconfig.ts_ls.setup({ capabilities = capabilities }) -- JavaScript & TypeScript
       lspconfig.jdtls.setup({ capabilities = capabilities }) -- Java
       lspconfig.gradle_ls.setup({ capabilities = capabilities }) -- Gradle
       lspconfig.kotlin_language_server.setup({ capabilities = capabilities }) -- Kotlin
       lspconfig.bashls.setup({ capabilities = capabilities }) -- Bash
       lspconfig.powershell_es.setup({ capabilities = capabilities }) -- PowerShell
       lspconfig.dockerls.setup({ capabilities = capabilities }) -- Docker
-      lspconfig.html.setup({ capabilities = capabilities }) -- HTML
+      lspconfig.html.setup({ cmd = { "vscode-html-language-server.cmd", "--stdio" }, capabilities = capabilities }) -- HTML
       lspconfig.cssls.setup({ capabilities = capabilities }) -- CSS
       lspconfig.jsonls.setup({ capabilities = capabilities }) -- JSON
       lspconfig.yamlls.setup({ capabilities = capabilities }) -- YAML
