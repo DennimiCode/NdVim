@@ -162,7 +162,15 @@ return {
       lspconfig.gradle_ls.setup({ capabilities = capabilities }) -- Gradle
       lspconfig.kotlin_language_server.setup({ capabilities = capabilities }) -- Kotlin
       lspconfig.bashls.setup({ capabilities = capabilities }) -- Bash
-      lspconfig.powershell_es.setup({ capabilities = capabilities }) -- PowerShell
+      lspconfig.powershell_es.setup({
+        capabilities = capabilities,
+        filetypes = { "ps1", "psm1", "psd1" },
+        bundle_path = "~/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
+        settings = { powershell = { codeFormatting = { Preset = "OTBS" } } },
+        init_options = {
+          enableProfileLoading = false,
+        },
+      }) -- PowerShell
       lspconfig.dockerls.setup({ capabilities = capabilities }) -- Docker
       lspconfig.html.setup({ cmd = { "vscode-html-language-server.cmd", "--stdio" }, capabilities = capabilities }) -- HTML
       lspconfig.cssls.setup({ capabilities = capabilities }) -- CSS
