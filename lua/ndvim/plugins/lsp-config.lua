@@ -50,6 +50,7 @@ return {
           "bashls", -- Bash
           "powershell_es", -- PowerShell
           "dockerls", -- Docker
+          "typos_lsp", -- Typos checker/fixer
         },
         automatic_installation = true,
       })
@@ -131,9 +132,17 @@ return {
           },
           capabilities = capabilities,
         }) -- Lua
+        lspconfig.typos_lsp.setup({
+          cmd = { "typos-lsp.cmd", "--stdio" },
+          init_options = {
+            config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+            diagnosticSeverity = "Error",
+          },
+          capabilities = capabilities,
+        })
       else
         lspconfig.powershell_es.setup({ capabilities = capabilities }) -- PowerShell
-        lspconfig.html.setup({ capabilities = capabilities }) -- HTML
+        lspconfig.html.setup({ capabilities = capabilities })
         lspconfig.lua_ls.setup({
           settings = {
             Lua = {
@@ -145,6 +154,13 @@ return {
           },
           capabilities = capabilities,
         }) -- Lua
+        lspconfig.typos_lsp.setup({
+          init_options = {
+            config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+            diagnosticSeverity = "Error",
+          },
+          capabilities = capabilities,
+        })
       end
     end,
   },

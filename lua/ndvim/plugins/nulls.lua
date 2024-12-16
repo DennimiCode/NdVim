@@ -1,6 +1,10 @@
 return {
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "davidmh/cspell.nvim",
+  },
   config = function()
+    local cspell = require("cspell")
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     local null_ls = require("null-ls")
 
@@ -19,6 +23,8 @@ return {
         end
       end,
       sources = {
+        cspell.diagnostics,
+        cspell.code_actions,
         null_ls.builtins.formatting.prettierd, -- Prettier (js, ts, jsx, tsx)
         null_ls.builtins.formatting.stylua, -- Lua
         null_ls.builtins.formatting.clang_format, -- C & C++, Objective-C and etc. in CLang

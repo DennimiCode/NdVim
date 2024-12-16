@@ -49,9 +49,6 @@ vim.cmd("hi colorcolumn guibg=#F4935B")
 o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 -- Enable NerdFont in Dadbod UI
 g.db_ui_use_nerd_fonts = 1
--- Enable spell checker
-o.spelllang = "en_us,ru_ru"
-o.spell = true
 
 -- Select shell type based on your OS (For windows: PowerShell NEW, for other: your default shell).
 if vim.fn.has("win32") then
