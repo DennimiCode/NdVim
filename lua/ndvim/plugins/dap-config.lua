@@ -6,15 +6,11 @@ return {
       "mfussenegger/nvim-dap",
     },
     config = function()
-      local mason_dapconfig = require("mason-nvim-dap")
-      mason_dapconfig.setup({
+      require("mason-nvim-dap").setup({
         ensure_installed = {
           "delve", -- Golang
           "codelldb", -- C & C++
           "coreclr", -- C# & .NET
-          "javadbg", -- Java debugger
-          "javatest", -- Java tests
-          "kotlin", -- Kotlin
         },
         automatic_installation = true,
       })
@@ -31,7 +27,7 @@ return {
       local dap, dapui = require("dap"), require("dapui")
       local osdebugpath = ""
 
-      if os.getenv("HOME") == nil then
+      if vim.fn.has("win32") then
         osdebugpath = "\\bin\\Debug\\"
       else
         osdebugpath = "/bin/Debug/"

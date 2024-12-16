@@ -3,7 +3,7 @@ return {
   version = "*",
   config = function()
     local user_shell = "/bin/zsh"
-    if os.getenv("HOME") == nil then
+    if vim.fn.has("win32") then
       user_shell = "pwsh"
     end
 

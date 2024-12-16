@@ -26,7 +26,6 @@ return {
         null_ls.builtins.formatting.goimports, -- Golang auto import
         null_ls.builtins.diagnostics.hadolint, -- Dockerfile
         null_ls.builtins.formatting.sqlfmt, -- SQL formatter
-        null_ls.builtins.formatting.google_java_format, -- Java formatter with Google rules
         null_ls.builtins.formatting.csharpier, -- C# formatter
       },
     })

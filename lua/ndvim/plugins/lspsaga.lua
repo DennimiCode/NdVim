@@ -1,8 +1,7 @@
 return {
   "nvimdev/lspsaga.nvim",
   config = function()
-    local lspsaga = require("lspsaga")
-    lspsaga.setup({
+    require("lspsaga").setup({
       ui = {
         devicon = true,
         title = true,

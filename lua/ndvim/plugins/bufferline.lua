@@ -3,8 +3,7 @@ return {
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    local bufferline = require("bufferline")
-    bufferline.setup({
+    require("bufferline").setup({
       options = {
         buffer_close_icon = "",
         mode = "buffers",

@@ -5,10 +5,9 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   config = function()
-    local auto_session = require("auto-session")
-    auto_session.setup({
+    require("auto-session").setup({
       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       auto_restore_enabled = false,
     })
-  end
+  end,
 }

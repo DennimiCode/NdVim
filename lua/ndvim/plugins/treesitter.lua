@@ -5,8 +5,7 @@ return {
   },
   build = ":TSUpdate",
   config = function()
-    local ts_config = require("nvim-treesitter.configs")
-    ts_config.setup({
+    require("nvim-treesitter.configs").setup({
       ignore_install = {},
       modules = {},
       ensure_installed = {
@@ -17,14 +16,12 @@ return {
         "vimdoc",
         "tmux",
         "query",
+        "regex",
         "c",
         "cpp",
         "c_sharp",
         "go",
         "gomod",
-        "java",
-        "groovy",
-        "kotlin",
         "markdown",
         "markdown_inline",
         "javascript",
@@ -37,6 +34,7 @@ return {
         "sql",
         "bash",
         "http",
+        "proto",
         "dockerfile",
         "toml",
         "yaml",
@@ -47,7 +45,6 @@ return {
         "hjson",
         "jsonnet",
         "gitignore",
-        "vue",
         "editorconfig",
       },
       sync_install = false,

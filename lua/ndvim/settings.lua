@@ -54,7 +54,7 @@ o.spelllang = "en_us,ru_ru"
 o.spell = true
 
 -- Select shell type based on your OS (For windows: PowerShell NEW, for other: your default shell).
-if os.getenv("HOME") == nil then
+if vim.fn.has("win32") then
   vim.cmd([[
     set shell=pwsh
     set shellcmdflag=-command
@@ -111,16 +111,6 @@ vapi.nvim_create_autocmd("FileType", {
 -- C# Lang indent setup.
 vapi.nvim_create_autocmd("FileType", {
   pattern = "cs",
-  callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
-  end,
-})
-
--- Rust indent setup.
-vapi.nvim_create_autocmd("FileType", {
-  pattern = "rs",
   callback = function()
     vim.opt_local.shiftwidth = 4
     vim.opt_local.tabstop = 4
