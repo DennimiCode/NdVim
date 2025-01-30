@@ -53,7 +53,7 @@ map("n", "<leader>ld", vim.lsp.buf.definition, { silent = true })
 map("n", "<leader>li", vim.lsp.buf.implementation, { silent = true })
 map("n", "<F2>", vim.lsp.buf.rename, { silent = true })
 
--- Debuggin
+-- Debugging
 map("n", "<leader>dt", ":DapToggleBreakpoint<CR>", { silent = true })
 map("n", "<leader>dx", ":DapTerminate<CR>", { silent = true })
 map("n", "<leader>do", ":DapStepOver<CR>", { silent = true })

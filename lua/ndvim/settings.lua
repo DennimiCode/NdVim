@@ -51,7 +51,7 @@ o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,term
 g.db_ui_use_nerd_fonts = 1
 
 -- Select shell type based on your OS (For windows: PowerShell NEW, for other: your default shell).
-if vim.fn.has("win32") then
+if vim.fn.has("win32") == true then
   vim.cmd([[
     set shell=pwsh
     set shellcmdflag=-command
