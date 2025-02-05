@@ -6,11 +6,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
-    require("go").setup({
-      goimports = "gopls",
-      gofmt = "gopls",
-      inlay_hint = true,
-    })
+    require("go").setup()
+    require("go.format").goimports()
   end,
   event = { "CmdlineEnter" },
   ft = { "go", "gomod" },

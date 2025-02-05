@@ -97,7 +97,7 @@ return {
         dapui.close()
       end
 
-      require("dap-go").setup({})
+      require("dap-go").setup()
 
       dap.configurations.cpp = {
         {
