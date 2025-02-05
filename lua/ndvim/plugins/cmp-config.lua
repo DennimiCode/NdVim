@@ -22,6 +22,8 @@ return {
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    vim.o.completeopt = "menuone,noselect"
+
     cmp.setup({
       preselect = cmp.PreselectMode.None,
       completion = {

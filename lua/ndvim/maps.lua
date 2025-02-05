@@ -19,6 +19,12 @@ map("i", "jj", "<ESC>", { silent = true })
 -- Clear highlighting after search.
 map("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
 
+-- Swap maps for cutting & deleting
+map('n', 'd', '"_d')
+map('v', 'd', '"_d')
+map('n', '"_d', 'd')
+map('v', '"_d', 'd')
+
 -- Cursor navigation on hjkl in insert mode.
 map("i", "<C-k>", "<Up>", { silent = true })
 map("i", "<C-j>", "<Down>", { silent = true })

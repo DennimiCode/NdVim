@@ -29,7 +29,6 @@ return {
             diagnostic.severity = vim.diagnostic.severity["HINT"]
           end,
         }),
-        cspell.code_actions,
         null_ls.builtins.formatting.prettierd,    -- Prettier (js, ts, jsx, tsx)
         null_ls.builtins.formatting.stylua,       -- Lua
         null_ls.builtins.formatting.clang_format, -- C & C++, Objective-C and etc. in CLang

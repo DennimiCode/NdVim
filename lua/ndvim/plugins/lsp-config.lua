@@ -33,24 +33,24 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls",        -- Lua
-          "clangd",        -- C & C++
-          "csharp_ls",     -- C#
-          "gopls",         -- Golang
-          "ts_ls",         -- JavaScript & TypeScript
-          "html",          -- HTML
-          "cssls",         -- CSS
-          "somesass_ls",   -- Sass
-          "lemminx",       -- XML
-          "taplo",         -- TOML
-          "yamlls",        -- YAML
-          "jsonls",        -- JSON
-          "marksman",      -- Markdown
-          "sqls",          -- SQL
-          "bashls",        -- Bash
+          "lua_ls", -- Lua
+          "clangd", -- C & C++
+          "csharp_ls", -- C#
+          "gopls", -- Golang
+          "ts_ls", -- JavaScript & TypeScript
+          "html", -- HTML
+          "cssls", -- CSS
+          "somesass_ls", -- Sass
+          "lemminx", -- XML
+          "taplo", -- TOML
+          "yamlls", -- YAML
+          "jsonls", -- JSON
+          "marksman", -- Markdown
+          "sqls", -- SQL
+          "bashls", -- Bash
           "powershell_es", -- PowerShell
-          "dockerls",      -- Docker
-          "typos_lsp",     -- Typos checker/fixer
+          "dockerls", -- Docker
+          "typos_lsp", -- Typos checker/fixer
         },
         automatic_installation = true,
       })
@@ -67,16 +67,13 @@ return {
       local mason_nulls = require("mason-null-ls")
       mason_nulls.setup({
         ensure_installed = {
-          "stylua",       -- Lua formatter
+          "stylua", -- Lua formatter
           "clang_format", -- C & C++ formatter
-          "csharpier",    -- C# formatter
-          "sqlfmt",       -- SQL formatter
-          "hadolint",     -- Dockerfile
-          "cspell",       -- Code Spell Checker
-          "codespell",
-          "misspell",
+          "csharpier", -- C# formatter
+          "sqlfmt", -- SQL formatter
+          "hadolint", -- Dockerfile
           "goimports", -- Organize imports for Golang
-          "golines",   -- Golang convert long strings to short
+          "golines", -- Golang convert long strings to short
         },
         automatic_installation = true,
       })
@@ -87,7 +84,7 @@ return {
     dependencies = {
       "nanotee/sqls.nvim",
       { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-      { "folke/lazydev.nvim",        opts = {} },
+      { "folke/lazydev.nvim", opts = {} },
     },
     config = function()
       local lspconfig = require("lspconfig")
@@ -98,18 +95,18 @@ return {
         lsp_zero.default_keymaps({ buffer = bufnr })
       end)
 
-      lspconfig.csharp_ls.setup({ capabilities = capabilities })                                                   -- C#
-      lspconfig.clangd.setup({ capabilities = capabilities })                                                      -- C & C++
+      lspconfig.csharp_ls.setup({ capabilities = capabilities }) -- C#
+      lspconfig.clangd.setup({ capabilities = capabilities }) -- C & C++
       lspconfig.gopls.setup({ capabilities = capabilities, settings = { gopls = { completeUnimported = true } } }) -- Golang
-      lspconfig.ts_ls.setup({ capabilities = capabilities })                                                       -- JavaScript & TypeScript
-      lspconfig.bashls.setup({ capabilities = capabilities })                                                      -- Bash
-      lspconfig.dockerls.setup({ capabilities = capabilities })                                                    -- Docker
-      lspconfig.cssls.setup({ capabilities = capabilities })                                                       -- CSS
-      lspconfig.jsonls.setup({ capabilities = capabilities })                                                      -- JSON
-      lspconfig.yamlls.setup({ capabilities = capabilities })                                                      -- YAML
-      lspconfig.taplo.setup({ capabilities = capabilities })                                                       -- TOML
-      lspconfig.lemminx.setup({ capabilities = capabilities })                                                     -- XML
-      lspconfig.marksman.setup({ capabilities = capabilities })                                                    -- Markdown
+      lspconfig.ts_ls.setup({ capabilities = capabilities }) -- JavaScript & TypeScript
+      lspconfig.bashls.setup({ capabilities = capabilities }) -- Bash
+      lspconfig.dockerls.setup({ capabilities = capabilities }) -- Docker
+      lspconfig.cssls.setup({ capabilities = capabilities }) -- CSS
+      lspconfig.jsonls.setup({ capabilities = capabilities }) -- JSON
+      lspconfig.yamlls.setup({ capabilities = capabilities }) -- YAML
+      lspconfig.taplo.setup({ capabilities = capabilities }) -- TOML
+      lspconfig.lemminx.setup({ capabilities = capabilities }) -- XML
+      lspconfig.marksman.setup({ capabilities = capabilities }) -- Markdown
 
       if vim.fn.has("win32") == true then
         lspconfig.powershell_es.setup({
@@ -120,7 +117,7 @@ return {
           init_options = {
             enableProfileLoading = false,
           },
-        })                                                                                                            -- PowerShell
+        }) -- PowerShell
         lspconfig.html.setup({ cmd = { "vscode-html-language-server.cmd", "--stdio" }, capabilities = capabilities }) -- HTML
         lspconfig.lua_ls.setup({
           cmd = { "lua-language-server.cmd", "--stdio" },
