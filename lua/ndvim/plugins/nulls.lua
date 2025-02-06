@@ -19,11 +19,13 @@ return {
         end
       end,
       sources = {
+        null_ls.builtins.formatting.goimports.with({
+          extra_args = { "-local", "github.com/DennimiCode/,gitlab.services.mts.ru/" },
+        }),
+        null_ls.builtins.formatting.gofmt, -- Golang
         null_ls.builtins.formatting.prettierd, -- Prettier (js, ts, jsx, tsx)
         null_ls.builtins.formatting.stylua, -- Lua
         null_ls.builtins.formatting.clang_format, -- C & C++, Objective-C and etc. in CLang
-        null_ls.builtins.formatting.gofmt, -- Golang
-        null_ls.builtins.formatting.goimports, -- Golang auto import
         null_ls.builtins.diagnostics.hadolint, -- Dockerfile
         null_ls.builtins.formatting.sqlfmt, -- SQL formatter
         null_ls.builtins.formatting.csharpier, -- C# formatter
