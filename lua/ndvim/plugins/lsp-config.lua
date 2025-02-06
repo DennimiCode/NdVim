@@ -97,7 +97,21 @@ return {
 
       lspconfig.csharp_ls.setup({ capabilities = capabilities }) -- C#
       lspconfig.clangd.setup({ capabilities = capabilities }) -- C & C++
-      lspconfig.gopls.setup({ capabilities = capabilities, settings = { gopls = { completeUnimported = true } } }) -- Golang
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            gofumpt = true,
+            staticcheck = true,
+            analyses = {
+              unusedparams = true,
+            },
+            completeUnimported = true,
+            usePlaceholders = true,
+            semanticTokens = true,
+          },
+        },
+      }) -- Golang
       lspconfig.ts_ls.setup({ capabilities = capabilities }) -- JavaScript & TypeScript
       lspconfig.bashls.setup({ capabilities = capabilities }) -- Bash
       lspconfig.dockerls.setup({ capabilities = capabilities }) -- Docker
