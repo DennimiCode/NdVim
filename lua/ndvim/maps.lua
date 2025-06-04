@@ -19,11 +19,9 @@ map("i", "jj", "<ESC>", { silent = true })
 -- Clear highlighting after search.
 map("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
 
--- Swap maps for cutting & deleting
-map('n', 'd', '"_d')
-map('v', 'd', '"_d')
-map('n', '"_d', 'd')
-map('v', '"_d', 'd')
+-- Set normal shortcut for copying
+map("n", "<leader>y", '"_d')
+map("v", "<leader>y", '"_d')
 
 -- Cursor navigation on hjkl in insert mode.
 map("i", "<C-k>", "<Up>", { silent = true })
