@@ -87,7 +87,6 @@ return {
       { "folke/lazydev.nvim", opts = {} },
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lsp_zero = require("lsp-zero")
 
@@ -95,9 +94,17 @@ return {
         lsp_zero.default_keymaps({ buffer = bufnr })
       end)
 
-      lspconfig.csharp_ls.setup({ capabilities = capabilities }) -- C#
-      lspconfig.clangd.setup({ capabilities = capabilities }) -- C & C++
-      lspconfig.gopls.setup({
+      vim.lsp.config.csharp_ls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("csharp_ls")
+
+      vim.lsp.config.clangd = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("clangd")
+
+      vim.lsp.config.gopls = {
         capabilities = capabilities,
         settings = {
           gopls = {
@@ -111,33 +118,73 @@ return {
             semanticTokens = true,
           },
         },
-      }) -- Golang
-      lspconfig.ts_ls.setup({ capabilities = capabilities }) -- JavaScript & TypeScript
-      lspconfig.bashls.setup({ capabilities = capabilities }) -- Bash
-      lspconfig.dockerls.setup({ capabilities = capabilities }) -- Docker
-      lspconfig.cssls.setup({ capabilities = capabilities }) -- CSS
-      lspconfig.jsonls.setup({ capabilities = capabilities }) -- JSON
-      lspconfig.yamlls.setup({ capabilities = capabilities }) -- YAML
-      lspconfig.taplo.setup({ capabilities = capabilities }) -- TOML
-      lspconfig.lemminx.setup({ capabilities = capabilities }) -- XML
-      lspconfig.marksman.setup({ capabilities = capabilities }) -- Markdown
+      }
+      vim.lsp.enable("gopls")
 
+      vim.lsp.config.ts_ls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("ts_ls")
+
+      vim.lsp.config.bashls = {
+        cmd = { "bash-language-server", "start" },
+        filetypes = { "bash", "sh" },
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("bashls")
+
+      vim.lsp.config.dockerls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("dockerls")
+
+      vim.lsp.config.cssls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("cssls")
+
+      vim.lsp.config.jsonls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("jsonls")
+
+      vim.lsp.config.yamlls = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("yamlls")
+
+      vim.lsp.config.taplo = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("taplo")
+
+      vim.lsp.config.lemminx = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("lemminx")
+
+      vim.lsp.config.marksman = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("marksman")
+
+      vim.lsp.config.html = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("html")
+
+      vim.lsp.config.lua_ls = {
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+            workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+            telemetry = { enable = false },
           },
-      else
-        lspconfig.powershell_es.setup({ capabilities = capabilities }) -- PowerShell
-        lspconfig.html.setup({ capabilities = capabilities })
-        lspconfig.lua_ls.setup({
-          settings = {
-            Lua = {
-              runtime = { version = "LuaJIT" },
-              diagnostics = { globals = { "vim" } },
-              workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-              telemetry = { enable = false },
-            },
-          },
-          capabilities = capabilities,
-        }) -- Lua
-      end
+        },
+      }
+      vim.lsp.enable("lua_ls")
     end,
   },
 }
