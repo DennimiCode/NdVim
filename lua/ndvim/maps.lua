@@ -93,6 +93,10 @@ map("n", "<leader>bo", function()
   vim.cmd(":BufferLineGoToBuffer " .. buf)
 end, { silent = true })
 
+-- Live Previwer
+map("n", "<leader>ps", ":LivePrevie start<CR>", { silent = true })
+map("n", "<leader>pc", ":LivePrevie close<CR>", { silent = true })
+
 -- Trouble
 map("n", "<leader>tx", function()
   require("trouble").toggle()
