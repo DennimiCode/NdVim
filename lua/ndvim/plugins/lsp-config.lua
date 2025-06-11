@@ -49,7 +49,6 @@ return {
           "marksman", -- Markdown
           "sqls", -- SQL
           "bashls", -- Bash
-          "powershell_es", -- PowerShell
           "dockerls", -- Docker
           "typos_lsp", -- Typos checker/fixer
         },
@@ -123,37 +122,7 @@ return {
       lspconfig.lemminx.setup({ capabilities = capabilities }) -- XML
       lspconfig.marksman.setup({ capabilities = capabilities }) -- Markdown
 
-      if vim.fn.has("win32") == true then
-        lspconfig.powershell_es.setup({
-          capabilities = capabilities,
-          filetypes = { "ps1", "psm1", "psd1" },
-          bundle_path = "~/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
-          settings = { powershell = { codeFormatting = { Preset = "OTBS" } } },
-          init_options = {
-            enableProfileLoading = false,
           },
-        }) -- PowerShell
-        lspconfig.html.setup({ cmd = { "vscode-html-language-server.cmd", "--stdio" }, capabilities = capabilities }) -- HTML
-        lspconfig.lua_ls.setup({
-          cmd = { "lua-language-server.cmd", "--stdio" },
-          settings = {
-            Lua = {
-              runtime = { version = "LuaJIT" },
-              diagnostics = { globals = { "vim" } },
-              workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-              telemetry = { enable = false },
-            },
-          },
-          capabilities = capabilities,
-        }) -- Lua
-        lspconfig.typos_lsp.setup({
-          cmd = { "typos-lsp.cmd", "--stdio" },
-          init_options = {
-            config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
-            diagnosticSeverity = "Error",
-          },
-          capabilities = capabilities,
-        })
       else
         lspconfig.powershell_es.setup({ capabilities = capabilities }) -- PowerShell
         lspconfig.html.setup({ capabilities = capabilities })
