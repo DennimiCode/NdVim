@@ -4,4 +4,4 @@
   <p>Yet another Neovim config called Neodymium</p>
 </div>
 
-[Neodymium icons created by bearicons - Flaticon]("https://www.flaticon.com/free-icons/neodymium")
+<a href="https://www.flaticon.com/free-icons/neodymium" title="neodymium icons">Neodymium icons created by bearicons - Flaticon</a>
