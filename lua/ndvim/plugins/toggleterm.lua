@@ -2,7 +2,7 @@ return {
   "akinsho/toggleterm.nvim",
   version = "*",
   config = function()
-    local user_shell = "/bin/zsh"
+    local user_shell = "$SHELL"
     if vim.fn.has("win32") == true then
       user_shell = "pwsh"
     end
