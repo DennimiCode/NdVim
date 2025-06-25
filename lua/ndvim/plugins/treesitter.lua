@@ -20,6 +20,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "neovim/nvim-lspconfig",
+    "OXY2DEV/markview.nvim",
   },
   build = ":TSUpdate",
   config = function()
