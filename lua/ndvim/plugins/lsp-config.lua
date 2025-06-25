@@ -49,6 +49,8 @@ return {
           "marksman", -- Markdown
           "sqls", -- SQL
           "bashls", -- Bash
+          "cmake", -- CMake
+          "fish_lsp", -- Fish
           "dockerls", -- Docker
           "typos_lsp", -- Typos checker/fixer
         },
@@ -125,6 +127,16 @@ return {
         capabilities = capabilities,
       }
       vim.lsp.enable("ts_ls")
+
+      vim.lsp.config.cmake = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("cmake")
+
+      vim.lsp.config.fish_lsp = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("fish_lsp")
 
       vim.lsp.config.bashls = {
         cmd = { "bash-language-server", "start" },
