@@ -52,25 +52,25 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls", -- Lua
-          "clangd", -- C & C++
-          "csharp_ls", -- C#
-          "gopls", -- Golang
-          "ts_ls", -- JavaScript & TypeScript
-          "html", -- HTML
-          "cssls", -- CSS
+          "lua_ls",      -- Lua
+          "clangd",      -- C & C++
+          "csharp_ls",   -- C#
+          "gopls",       -- Golang
+          "ts_ls",       -- JavaScript & TypeScript
+          "html",        -- HTML
+          "cssls",       -- CSS
           "somesass_ls", -- Sass
-          "lemminx", -- XML
-          "taplo", -- TOML
-          "yamlls", -- YAML
-          "jsonls", -- JSON
-          "marksman", -- Markdown
-          "sqls", -- SQL
-          "bashls", -- Bash
-          "cmake", -- CMake
-          "fish_lsp", -- Fish
-          "dockerls", -- Docker
-          "typos_lsp", -- Typos checker/fixer
+          "lemminx",     -- XML
+          "taplo",       -- TOML
+          "yamlls",      -- YAML
+          "jsonls",      -- JSON
+          "marksman",    -- Markdown
+          "sqls",        -- SQL
+          "bashls",      -- Bash
+          "cmake",       -- CMake
+          "fish_lsp",    -- Fish
+          "dockerls",    -- Docker
+          "typos_lsp",   -- Typos checker/fixer
         },
         automatic_installation = true,
       })
@@ -87,13 +87,13 @@ return {
       local mason_nulls = require("mason-null-ls")
       mason_nulls.setup({
         ensure_installed = {
-          "stylua", -- Lua formatter
+          "stylua",       -- Lua formatter
           "clang_format", -- C & C++ formatter
-          "csharpier", -- C# formatter
-          "sqlfmt", -- SQL formatter
-          "hadolint", -- Dockerfile
-          "goimports", -- Organize imports for Golang
-          "golines", -- Golang convert long strings to short
+          "csharpier",    -- C# formatter
+          "sqlfmt",       -- SQL formatter
+          "hadolint",     -- Dockerfile
+          "goimports",    -- Organize imports for Golang
+          "golines",      -- Golang convert long strings to short
         },
         automatic_installation = true,
       })
@@ -104,7 +104,7 @@ return {
     dependencies = {
       "nanotee/sqls.nvim",
       { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-      { "folke/lazydev.nvim", opts = {} },
+      { "folke/lazydev.nvim",        opts = {} },
     },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
