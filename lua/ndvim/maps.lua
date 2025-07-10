@@ -21,7 +21,7 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Main keymaps
+-- Main key maps
 -- Save changes in current buffer.
 map("n", "<leader>w", ":w<CR>", { silent = true })
 -- Save changes in all opened buffers.
@@ -111,7 +111,7 @@ map("n", "<leader>bo", function()
   vim.cmd(":BufferLineGoToBuffer " .. buf)
 end, { silent = true })
 
--- Live Previwer
+-- Live Previewer
 map("n", "<leader>ps", ":LivePrevie start<CR>", { silent = true })
 map("n", "<leader>pc", ":LivePrevie close<CR>", { silent = true })
 

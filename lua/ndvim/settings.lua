@@ -22,13 +22,13 @@ local g = vim.g
 local wo = vim.wo
 local vapi = vim.api
 
--- The builtin filetype detection provided by Nvim.
+-- The builtin file type detection provided by nvim.
 g.did_load_filetypes = 1
--- Always enable statusline.
+-- Always enable status line.
 o.laststatus = 3
--- Disable showmode.
+-- Disable show mode.
 o.showmode = false
--- Set updatetime to 100 ms.
+-- Set update time to 100 ms.
 opt.updatetime = 100
 -- When signs are defined for a file, Vim will automatically add a column of two
 -- characters to display them in.  When the last sign is unplaced the column disappears again.
@@ -53,19 +53,19 @@ opt.termguicolors = true
 g.syntax = "on"
 -- Enable color column on 120 length.
 opt.colorcolumn = "120"
--- Highlight the text line of the cursor with CursorLine.
+-- Highlight the text line of the cursor with Cursor line.
 o.cursorline = true
--- Defines how CursorLine will be displayed.
+-- Defines how Cursor line will be displayed.
 o.cursorlineopt = "both"
--- Search & autocompleate options.
+-- Search & autocomplete options.
 o.ignorecase = true
 o.smartcase = true
 opt.completeopt = { "menu", "menuone", "noselect" }
--- Setup colorcolumn color.
+-- Setup color column color.
 vim.cmd("hi colorcolumn guibg=#F4935B")
 -- Setup session options
 o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
--- Enable NerdFont in Dadbod UI
+-- Enable Nerd Font in Dadbod UI
 g.db_ui_use_nerd_fonts = 1
 
 -- Enable spell checker
