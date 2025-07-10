@@ -70,7 +70,6 @@ g.db_ui_use_nerd_fonts = 1
 
 -- Enable spell checker
 opt.spell = true
-opt.spelllang = "en_us,en_gb,ru_ru"
 
 -- Select shell type based on your OS (For windows: PowerShell NEW, for other: your default shell).
 if vim.fn.has("win32") == true then
@@ -83,6 +82,7 @@ if vim.fn.has("win32") == true then
 else
   o.shell = o.shell
 end
+opt.spelllang = { "en", "ru" }
 
 -- Enable mouse.
 opt.mouse = "a"
