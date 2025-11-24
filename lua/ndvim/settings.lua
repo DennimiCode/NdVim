@@ -79,6 +79,9 @@ opt.mousefocus = true
 -- Sync clipboard with OS.
 opt.clipboard = "unnamedplus"
 
+-- Disable spell checking in terminal window
+vim.cmd [[autocmd TermOpen * setlocal nospell]]
+
 -- Setup line numbers.
 opt.number = true
 opt.relativenumber = true
